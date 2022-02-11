@@ -1,0 +1,151 @@
+/* attr selector & universal selector */
+/* ---attr selector---*/
+
+/* input[type="text"] {
+    background: red;
+} */
+
+/* ---universal--- */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar*/
+
+.navbar{
+    background: #333;
+}
+
+.navbar h2{
+    font-size: 22px;
+    color: white;
+    width: 20%;
+    
+    float: left;
+}
+
+.navbar > ul{
+    list-style-type: none;
+    width: 80%;
+    
+    float: left;
+}
+
+.navbar > ul li {
+    display: inline-block;
+    width: 100px;
+}
+
+.navbar > ul li a {
+    color: rgb(228, 114, 114);
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+}
+
+.navbar > ul li {
+    position: relative; /* هنا عملنا الأب relative والأبت absolute */
+}
+
+.navbar > ul li ul{
+    position: absolute;
+    display: none;
+}
+
+.navbar > ul li a:hover + ul{
+    display: block;
+
+}
+
+.clear{
+    clear: both;
+}
+
+/* dropdown ^^^^ فوق  */
+
+/* css forms */ 
+
+form input , form select{
+    display: block;
+    width: 100%; 
+}
+
+form input:focus{
+    background: red;
+}
+
+/* after & befor */
+
+.ul{
+    padding: 20px;
+    list-style: none;
+}
+
+
+.ul li::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: red ;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* css units... px em rem vh vw */
+
+.parent {
+    font-size: 15px;
+}
+
+.child{
+    background: red;
+    width: 50vw;
+    height: 50vh;
+}
+
+/* gallery */
+
+ /* more about nesting */
+
+p.item{
+    color: rgb(228, 114, 114);
+}
+
+.item.test.orange{
+     color: blue;
+}/*  عنصر واحد */
+
+.item .test .orange{
+    color: blue;
+} /* عنصر جوا عنصر جوا عنصر */
+
+
+/* specificity */
+
+#demo{
+    color: yellow;
+} /* 0 1 0 0 */
+
+.local{
+    color: blue;
+} /* 0 0 1 0 */
+
+/* styleinline  id (class|pesudo class|attr selector) element*/
+/* 0 0 1 2
+div .item p{
+
+}
+
+#demo div [id="item"] p span{
+
+}
+0 1 1 3 */
+
+/* #demo .test p[title="test"] :hover {
+
+}
+0 1 3 1 */
+
